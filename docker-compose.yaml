@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./src/frontend
+    ports:
+      - "8080:8080"
+  productcatalogservice:
+    build: ./src/productcatalogservice
+  cartservice:
+    build: ./src/cartservice
+  adservice:
+    build: ./src/adservice
+  checkoutservice:
+    build: ./src/checkoutservice
+  currencyservice:
+    build: ./src/currencyservice
+  loadgenerator:
+    build: ./src/loadgenerator
+  paymentservice:
+    build: ./src/paymentservice
+  recommendationservice:
+    build: ./src/recommendationservice
+  shippingservice: 
+    build: ./src/shippingservice
+  shoppingassistanceservice:
+    build: ./src/shoppingassistanceservice
