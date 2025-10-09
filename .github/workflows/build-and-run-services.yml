@@ -33,3 +33,17 @@ jobs:
             docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$service:latest "$context" 
             docker push ${{ secrets.DOCKERHUB_USERNAME }}/$service:latest
           done
+
+      - name: Install kubelet
+        run: |
+            curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+            chmod +x kubectl
+            sudo mv kubectl /usr/local/bin/
+            kubectl version --client
+
+      - name: Install kind
+        run: |
+          curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.30.0/kind-$(uname)-amd64
+          chmod +x ./kind
+          sudo mv ./kind /usr/local/bin/kind
+        
