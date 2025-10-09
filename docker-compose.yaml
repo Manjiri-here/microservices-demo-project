@@ -23,4 +23,4 @@ services:
   shippingservice: 
     build: ./src/shippingservice
   shoppingassistanceservice:
-    build: ./src/shoppingassistanceservice
+    build: ./src/shoppingassistantservice
