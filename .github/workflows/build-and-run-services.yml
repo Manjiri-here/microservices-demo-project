@@ -2,16 +2,37 @@ name: cicd pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    workflow_dispatch
+    #branches: [ "main" ]
 
 jobs:
+    
 
   docker_build:
 
     runs-on: ubuntu-latest
 
     steps:
+  
     - uses: actions/checkout@v4
+    strategy:
+      matrix:
+        service:
+          # List all your service directories in src/
+          - service1
+          - service2
+          - service3
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build ${{ matrix.service }}
+        run: |
+          docker build -t ${{ matrix.service }} ./src/${{ matrix.service }}
+
+      - name: Run ${{ matrix.service }}
+        run: |
+          docker run -d ${{ matrix.service }}
+```
     - name: Build the Docker image
       run: |
        for dir in src/*/ ; do
@@ -19,7 +40,7 @@ jobs:
         echo "🚀 Building $service..."
         docker build -t $service:latest $dir
        done
-
+```
     - name: Smoke test app (using docker-compose)
       run: |
        docker compose up -d
