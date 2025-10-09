@@ -31,5 +31,5 @@ jobs:
               context="$dir" 
             fi 
             docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$service:latest "$context" 
-            docker push ${{ secrets.DOCKERHUB_USERNAME }}/$service:latest done
+            docker push ${{ secrets.DOCKERHUB_USERNAME }}/$service:latest
           done
