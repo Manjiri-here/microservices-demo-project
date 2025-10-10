@@ -59,7 +59,10 @@ jobs:
 #          kubectl get nodes   # If this returns a list of nodes, your context and kubeconfig are working correctly.
 
 # This is not a pipeline step, but noting it here as above has been sequence since beginning: 
-# 1) sudo apt install helm
+# 1) curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+#    chmod 700 get_helm.sh
+#    ./get_helm.sh
+
 # 2) helm create microservice-helmchart   .. a helm chart of name microservice-helmchart will be created, names[ace is default
  
                
