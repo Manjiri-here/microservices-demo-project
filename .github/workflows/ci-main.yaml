@@ -14,11 +14,11 @@
 
 name: "Continuous Integration - Main/Release"
 on:
-  push:
+#  push:
     # run on pushes to main or release/*
-    branches:
-      - main
-      - release/*
+#    branches:
+#      - main
+#      - release/*
     paths-ignore:
       - '**/README.md'
       - 'kustomize/**'
