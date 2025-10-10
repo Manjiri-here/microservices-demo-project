@@ -1,0 +1,121 @@
+global:
+  imagePullPolicy: IfNotPresent
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 200m
+      memory: 256Mi
+  ingress:
+    enabled: false
+    annotations: {}
+    hosts: []
+    tls: []
+
+services:
+  adservice:
+    replicaCount: 1
+    image:
+      repository: manjirinaik/adservice
+      tag: latest
+    service:
+      port: 8080
+
+  cartservice:
+    replicaCount: 1
+    image:
+      repository: manjirinaik/cartservice
+      tag: latest
+    service:
+      port: 7070
+
+  checkoutservice:
+    replicaCount: 1
+    image:
+      repository: manjirinaik/checkoutservice
+      tag: latest
+    service:
+      port: 8090
+
+  currencyservice:
+    replicaCount: 1
+    image:
+      repository: manjirinaik/currencyservice
+      tag: latest
+    service:
+      port: 8180
+
+  emailservice:
+    replicaCount: 1
+    image:
+      repository: manjirinaik/emailservice
+      tag: latest
+    service:
+      port: 8280
+
+  paymentservice:
+    replicaCount: 1
+    image:
+      repository: manjirinaik/paymentservice
+      tag: latest
+    service:
+      port: 8380
+
+  productcatalogservice:
+    replicaCount: 1
+    image:
+      repository: manjirinaik/productcatalogservice
+      tag: latest
+    service:
+      port: 8480
+
+  recommendationservice:
+    replicaCount: 1
+    image:
+      repository: manjirinaik/recommendationservice
+      tag: latest
+    service:
+      port: 8580
+
+  shippingservice:
+    replicaCount: 1
+    image:
+      repository: manjirinaik/shippingservice
+      tag: latest
+    service:
+      port: 8680
+
+  currencyservice:
+    replicaCount: 1
+    image:
+      repository: manjirinaik/currencyservice
+      tag: latest
+    service:
+      port: 7000
+
+  shoppingassistantservice:
+    replicaCount: 1
+    image:
+      repository: manjirinaik/shoppingassistantservice
+      tag: latest
+    service:
+      port: 8080
+
+  frontend:
+    replicaCount: 1
+    image:
+      repository: manjirinaik/frontend
+      tag: latest
+    service:
+      port: 8080
+        
+  loadgenerator:
+    replicaCount: 1
+    image:
+      repository: manjirinaik/loadgenerator
+      tag: latest
+    # Note: loadgenerator may not need a service if it's just generating traffic
+    service:
+      enabled: false
+      port: 0
