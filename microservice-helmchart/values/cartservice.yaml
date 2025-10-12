@@ -1,3 +1,13 @@
+autoscaling:
+  enabled: false
+
+serviceAccount:
+  create: true
+  name: ""
+
+httpRoute:
+  enabled: false
+    
 replicaCount: 1
 
 image:
@@ -16,3 +26,6 @@ resources:
   limits:
     cpu: 200m
     memory: 256Mi
+
+ingress:
+  enabled: false      
