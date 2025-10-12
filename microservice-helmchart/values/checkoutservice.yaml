@@ -16,7 +16,7 @@ image:
   pullPolicy: IfNotPresent
 
 service:
-  port: 7070
+  port: 5050
   type: ClusterIP
 
 resources:
@@ -29,3 +29,4 @@ resources:
 
 ingress:
   enabled: false      
+
