@@ -43,6 +43,8 @@ jobs:
             docker push ${{ secrets.DOCKERHUB_USERNAME }}/$service:latest
           done
 
+    - name: Deploy services one by one to k8s
+      run: 
 #      - name: Install kubectl
 #        run: |
 #            curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
