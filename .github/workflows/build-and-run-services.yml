@@ -22,7 +22,7 @@ jobs:
       - name: Install docker
         run: |
           sudo apt update
-          sudo apt install docker.io
+          sudo apt install docker.io -y
           sudo systemctl enable docker
           sudo systemctl start docker
           sudo groupadd docker                 # Create group if not exists
