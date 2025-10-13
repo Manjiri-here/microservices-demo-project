@@ -1,4 +1,4 @@
-name: cicd pipeline
+cname: cicd pipeline
 
 on:
   workflow_dispatch:
@@ -72,7 +72,7 @@ jobs:
 # 2) helm create microservice-helmchart   .. a helm chart of name microservice-helmchart will be created, names[ace is default
       - name: Deploy services one by one to k8s
         run: |
-         helm install frontend ./charts/frontend -f values/frontend.yaml
+         helm install frontend ./microservice-helmchart -f values/frontend.yaml
          helm install cartservice ./charts/cartservice -f values/cartservice.yaml
          helm install loadgenerator ./charts/loadgenerator -f values/loadgeneratorservice.yaml  
          helm install adservice ./charts/adservice -f values/adservice.yaml 
