@@ -26,6 +26,7 @@ jobs:
           sudo systemctl enable docker
           sudo systemctl start docker
           sudo groupadd docker                 # Create group if not exists
+          continue-on-error: true
           sudo usermod -aG docker $USER        # Add your user to the docker group
           newgrp docker                       # Refresh group membership, or logout/login
 
