@@ -73,16 +73,16 @@ jobs:
       - name: Deploy services one by one to k8s
         run: |
          helm install frontend ./microservice-helmchart -f values/frontend.yaml
-         helm install cartservice ./charts/cartservice -f values/cartservice.yaml
-         helm install loadgenerator ./charts/loadgenerator -f values/loadgeneratorservice.yaml  
-         helm install adservice ./charts/adservice -f values/adservice.yaml 
-         helm install checkoutservice ./charts/checkoutservice -f values/checkoutservice.yaml 
-         helm install emailservice ./charts/emailservice -f values/emailservice.yaml 
-         helm install productcatalogservice ./charts/productcatalogservice -f values/productcatalogservice.yaml 
-         helm install shippingservice ./charts/shippingservice -f values/shippingservice.yaml 
-         helm install currencyservice ./charts/currencyservice -f values/currencyservice.yaml 
-         helm install paymentservice ./charts/paymentservice -f values/paymentservice.yaml 
-         helm install recommendationservice ./charts/recommendationservice -f values/recommendationservice.yaml 
-         helm install shoppingassistantservice ./charts/shoppingassistantservice -f values/shoppingassistantservice.yaml 
+      #   helm install cartservice ./charts/cartservice -f values/cartservice.yaml
+     #    helm install loadgenerator ./charts/loadgenerator -f values/loadgeneratorservice.yaml  
+     #    helm install adservice ./charts/adservice -f values/adservice.yaml 
+     #    helm install checkoutservice ./charts/checkoutservice -f values/checkoutservice.yaml 
+      #   helm install emailservice ./charts/emailservice -f values/emailservice.yaml 
+       #  helm install productcatalogservice ./charts/productcatalogservice -f values/productcatalogservice.yaml 
+        # helm install shippingservice ./charts/shippingservice -f values/shippingservice.yaml 
+         #helm install currencyservice ./charts/currencyservice -f values/currencyservice.yaml 
+       #  helm install paymentservice ./charts/paymentservice -f values/paymentservice.yaml 
+        # helm install recommendationservice ./charts/recommendationservice -f values/recommendationservice.yaml 
+         #helm install shoppingassistantservice ./charts/shoppingassistantservice -f values/shoppingassistantservice.yaml 
          
          
