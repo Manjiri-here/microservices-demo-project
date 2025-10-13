@@ -14,18 +14,18 @@ jobs:
       url: https://myapp.example.com
 
     steps:
-      - uses: actions/checkout@v4
+     
 
 # commenting the step below as docker is preinstalled in githyb actions
-#      - name: Install docker
-#        run: |
-#          sudo apt update
-#          sudo apt install docker.io
-#          sudo systemctl enable docker
-#          sudo systemctl start docker
-#          sudo groupadd docker                 # Create group if not exists
-#          sudo usermod -aG docker $USER        # Add your user to the docker group
-#          newgrp docker                       # Refresh group membership, or logout/login
+     - name: Install docker
+       run: |
+          sudo apt update
+          sudo apt install docker.io
+          sudo systemctl enable docker
+          sudo systemctl start docker
+          sudo groupadd docker                 # Create group if not exists
+          sudo usermod -aG docker $USER        # Add your user to the docker group
+          newgrp docker                       # Refresh group membership, or logout/login
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
@@ -34,6 +34,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
       - name: Build all services
+        uses: actions/checkout@v4
         run: | 
           for dir in src/*/ ; do 
             service=$(basename "$dir") 
